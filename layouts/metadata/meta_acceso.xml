@@ -1,7 +1,4 @@
 <lang>
-    <username>LabExperimental-SIUA</username>
-    <repo>osmtracker-android</repo>
-    <branch>layouts</branch>
     <es>
         <name>Español</name>
         <desc>
@@ -18,4 +15,7 @@
 	    audible traffic lights.
 	</desc>
     </en>
+    <username>LabExperimental-SIUA</username>
+    <repo>osmtracker-android</repo>
+    <branch>layouts</branch>
 </lang>
