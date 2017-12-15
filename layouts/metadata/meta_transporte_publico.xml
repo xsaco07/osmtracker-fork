@@ -4,4 +4,7 @@
 		<desc>Con este Layout se podrá mapear los tres tipos de paradas, lugares de estacionamiento de taxis, trenes y 
 		bicicletas, además, de ciclovías y lugares de alquiler de bicicletas.</desc>
 	</es>
+	<branch>layouts</branch>
+	<repo>osmtracker-android</repo>
+	<username>LabExperimental-SIUA</username>
 </lang>

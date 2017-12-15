@@ -69,30 +69,6 @@
 			<button type="tag" label="Parqueo Bicicleta" icon="transporte_publico/parqueo_bici.png" />
 		</row>
 	</layout>
-    <!--
-	<layout name="restriction">
-		<row>
-			<button type="voicerec" icon="voice_32x32" />
-			<button type="picture" icon="camera_32x32" />
-			<button type="textnote" icon="text_32x32" />
-		</row>
-		<row>
-			<button type="tag" label="@string/tag.restriction_30" icon="button_restriction" />
-			<button type="tag" label="@string/tag.restriction_50" icon="button_restriction" />
-			<button type="tag" label="@string/tag.restriction_80" icon="button_restriction" />
-		</row>
-		<row>
-			<button type="tag" label="@string/tag.restriction_100" icon="button_restriction" />
-			<button type="tag" label="@string/tag.restriction_110" icon="button_restriction" />
-			<button type="tag" label="@string/tag.restriction_120" icon="button_restriction" />
-		</row>
-		<row>
-			<button type="tag" label="@string/tag.restriction_no_exit" icon="button_restriction_no_exit" />
-			<button type="tag" label="@string/tag.restriction_traffic_light" icon="button_restriction_traffic_light" />
-			<button type="tag" label="@string/tag.restriction_one_way" icon="button_restriction_one_way" />
-		</row>
-	</layout>
-    -->
 	<layout name="car">
 		<row>
 			<button type="voicerec" icon="voice_32x32" />
