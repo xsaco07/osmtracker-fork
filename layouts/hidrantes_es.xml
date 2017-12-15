@@ -11,7 +11,7 @@
       <!--
 			<button type="page" label="@string/tag.restriction" icon="button_restriction" targetlayout="restriction"  />
             -->
-      <button type="page" label="Hidrantes OSM" icon="icons/500/App-01.png" targetlayout="hidrantesOSM"/>
+      <button type="page" label="Hidrantes OSM" icon="hidrantes/App-01.png" targetlayout="hidrantesOSM"/>
       <button type="page" label="@string/tag.car" icon="button_car" targetlayout="car"/>
     </row>
     <row>
@@ -54,45 +54,22 @@
       <button type="textnote" icon="text_32x32"/>
     </row>
     <row>
-      <button type="tag" label="Hidrante Multivalvular Mal Estado" icon="icons/500/App-09.png"/>
-      <button type="tag" label="Hidrante normal mal Estado" icon="icons/500/App-10.png"/>
-      <button type="tag" label="Hidrante Pared Mal Estado" icon="icons/500/App-11.png"/>
+      <button type="tag" label="Hidrante Multivalvular Mal Estado" icon="hidrantes/App-09.png"/>
+      <button type="tag" label="Hidrante normal mal Estado" icon="hidrantes/App-10.png"/>
+      <button type="tag" label="Hidrante Pared Mal Estado" icon="hidrantes/App-11.png"/>
     </row>
     <row>
-      <button type="tag" icon="icons/500/App-03.png" label="Hidrante Normal 2.5'"/>
-      <button type="tag" icon="icons/500/App-03.png" label="Hidrante Normal 4'"/>
-      <button type="tag" icon="icons/500/App-01.png" label="Hidrante Multivalvular 2.5'"/>
+      <button type="tag" icon="hidrantes/App-03.png" label="Hidrante Normal 2.5'"/>
+      <button type="tag" icon="hidrantes/App-03.png" label="Hidrante Normal 4'"/>
+      <button type="tag" icon="hidrantes/App-01.png" label="Hidrante Multivalvular 2.5'"/>
     </row>
     <row>
-      <button type="tag" icon="icons/500/App-01.png" label="Hidrante Multivalvular 4'"/>
-      <button type="tag" icon="icons/500/App-02.png" label="Hidrante de Pared"/>
-      <button type="tag" icon="icons/500/App-04.png" label="Hidrante de otro tipo"/>
+      <button type="tag" icon="hidrantes/App-01.png" label="Hidrante Multivalvular 4'"/>
+      <button type="tag" icon="hidrantes/App-02.png" label="Hidrante de Pared"/>
+      <button type="tag" icon="hidrantes/App-04.png" label="Hidrante de otro tipo"/>
     </row>
   </layout>
-  <!--
-	<layout name="restriction">
-		<row>
-			<button type="voicerec" icon="voice_32x32" />
-			<button type="picture" icon="camera_32x32" />
-			<button type="textnote" icon="text_32x32" />
-		</row>
-		<row>
-			<button type="tag" label="@string/tag.restriction_30" icon="button_restriction" />
-			<button type="tag" label="@string/tag.restriction_50" icon="button_restriction" />
-			<button type="tag" label="@string/tag.restriction_80" icon="button_restriction" />
-		</row>
-		<row>
-			<button type="tag" label="@string/tag.restriction_100" icon="button_restriction" />
-			<button type="tag" label="@string/tag.restriction_110" icon="button_restriction" />
-			<button type="tag" label="@string/tag.restriction_120" icon="button_restriction" />
-		</row>
-		<row>
-			<button type="tag" label="@string/tag.restriction_no_exit" icon="button_restriction_no_exit" />
-			<button type="tag" label="@string/tag.restriction_traffic_light" icon="button_restriction_traffic_light" />
-			<button type="tag" label="@string/tag.restriction_one_way" icon="button_restriction_one_way" />
-		</row>
-	</layout>
-    -->
+
   <layout name="car">
     <row>
       <button type="voicerec" icon="voice_32x32"/>
