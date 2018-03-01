@@ -5,6 +5,6 @@
 	<desc>This layout allows you to map different kinds of water supplies like some that are in use right now, new water supply discovered or contaminated ones.</desc>
     </en>
     <username>LabExperimental-SIUA</username>
-    <repo>osmtracker-android</repo>
+    <repo>osmtracker-android_old</repo>
     <branch>layouts</branch>
 </lang>
