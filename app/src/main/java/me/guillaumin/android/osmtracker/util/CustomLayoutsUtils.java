@@ -33,9 +33,11 @@ public class CustomLayoutsUtils {
         }
         else{
             String tmpName = fileName.substring(0, fileName.length() - Preferences.LAYOUT_FILE_EXTENSION.length());
-            subName = tmpName.replace("meta_", "");
+            subName = tmpName.replace("_", " ");
+            //subName = tmpName.replace("meta_", "");
         }
-        return subName.replace("_", " ");
+        return subName;
+        //return subName.replace("_", " ");
     }
 
     /**
@@ -43,7 +45,8 @@ public class CustomLayoutsUtils {
      * @return the filename of the layout. Which is the input with the "meta_", "_" and ".xml"
      */
     public static String unconvertFileName(String representation){
-        return "meta_"+representation.replace(" ","_")+".xml";
+        //return "meta_"+representation.replace(" ","_")+".xml";
+        return representation.replace(" ","_") + Preferences.LAYOUT_FILE_EXTENSION;
     }
 
     /**
