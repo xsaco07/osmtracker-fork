@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import me.guillaumin.android.osmtracker.OSMTracker;
+import me.guillaumin.android.osmtracker.activity.Preferences;
 
 /**
  * Created by labexp on 13/12/17.
@@ -55,15 +56,14 @@ public class URLCreator {
      * Return a URL to download a file in the `/layouts/metadata/` folder.
      *
      * @param context {@link Context} to lookup for the preferences values
-     * @param layoutName The name of the layout to be included in the URL for download the file.
+     * @param layoutFolderName The name of the layout folder to be included in the URL for download the file.
      * @param iso String language code of the layout (ISO 639-1)
      * @return String
      */
-    public static String createLayoutFileURL(Context context, String layoutName, String iso){
+    public static String createLayoutFileURL(Context context, String layoutFolderName, String iso){
         String[] ghParams = getGithubParams(context);
-        String layoutFileName = CustomLayoutsUtils.createFileName(layoutName, iso);
         String url = RAW_CONTENT + ghParams[0] + "/" + ghParams[1] + "/" + ghParams[2]
-                + "/layouts/" + layoutFileName;
+                + "/layouts/" + layoutFolderName + "/" + iso + Preferences.LAYOUT_FILE_EXTENSION;
         return url;
     }
 
@@ -71,15 +71,14 @@ public class URLCreator {
      * Return a URL to download icon files in the `/layouts/$layoutName/` folder.
      *
      * @param context {@link Context} to lookup for the preferences values
-     * @param layoutName The name of the layout to be included in the URL
+     * @param layoutFolderName The name of the layout to be included in the URL
      * @return String
      */
-    public static String createIconsDirUrl(Context context, String layoutName){
+    public static String createIconsDirUrl(Context context, String layoutFolderName){
         String[] ghParams = getGithubParams(context);
-        String iconsDirName = layoutName.replace(" ", "_");
 
         String url = API_BASE + ghParams[0] + "/" + ghParams[1]
-                + "/contents/layouts/" + iconsDirName + "?ref=" + ghParams[2];
+                + "/contents/layouts/" + layoutFolderName + "/" + "icons" + "?ref=" + ghParams[2];
         return url;
     }
 
