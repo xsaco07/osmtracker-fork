@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import org.osmtracker.OSMTracker;
+import org.osmtracker.activity.Preferences;
 
 /**
  * Created by labexp on 13/12/17.
