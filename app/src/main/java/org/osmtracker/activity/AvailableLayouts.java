@@ -70,15 +70,6 @@ public class AvailableLayouts extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String file = "<metadata>\n" +
-                "    <option iso=\"es\" name=\"Español\">Este layout permite mapear sobre accesibilidad: rampas, obstáculos, aceras táctiles, baños accesibles y semáforos audibles.</option>\n" +
-                "    <option iso=\"en\" name=\"English\">This layout allows you to map objects about accesibility: ramps, obstacles, tactile sidewalks, accesible bathrooms and audible traffic lights.</option>\n" +
-                "    <github username=\"labexp\" repo=\"osmtracker-android-layouts\" branch=\"master\" />\n" +
-                "</metadata>";
-        HashMap<String,String> res = getLanguagesFor(file);
-        Log.e("#","Parseo: "+res.toString());
-
-        Log.e("#","Leng="+getDescriptionFor(file,"es"));
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = sharedPrefs.edit();
         // call task to download and parse the response to get the list of available layouts
@@ -387,7 +378,6 @@ public class AvailableLayouts extends Activity {
         public void onClick(View view) {
             final String layoutName = ""+((TextView) view).getText();
             String url = URLCreator.createMetadataFileURL(view.getContext(), layoutName);
-            Log.e("#","ndo "+url);
             final ProgressDialog dialog = new ProgressDialog(view.getContext());
             dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             dialog.setMessage(getResources().getString(R.string.available_layouts_checking_language_dialog));
@@ -397,7 +387,6 @@ public class AvailableLayouts extends Activity {
                 protected void onPostExecute(String response) {
                     dialog.dismiss();
                     String xmlFile = response;
-//                    Log.e("#",">>>"+response);
                     String localLang = Locale.getDefault().getLanguage();
                     String description = getDescriptionFor(xmlFile, localLang);
                     if (description != null) {
