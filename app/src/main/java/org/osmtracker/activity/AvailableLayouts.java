@@ -242,6 +242,20 @@ public class AvailableLayouts extends Activity {
                     .setNegativeButton(getResources().getString(R.string.menu_cancel), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            if(!isDefChecked){
+                                toggleRepositoryOptions(true);
+                                isDefChecked = true;
+                                //save the status into the sharedPreferences file
+                                editor.putBoolean("defCheck", isDefChecked);
+                                editor.commit();
+                            }
+                            else{
+                                toggleRepositoryOptions(false);
+                                isDefChecked = false;
+                                //save the status into the sharedPreferences file
+                                editor.putBoolean("defCheck", isDefChecked);
+                                editor.commit();
+                            }
                             dialog.cancel();
                         }
                     })
