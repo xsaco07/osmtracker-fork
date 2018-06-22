@@ -64,6 +64,8 @@ public class AvailableLayouts extends Activity {
     private CheckBox defaultServerCheckBox;
     private CheckBox customServerCheckBox;
 
+    private boolean checkBoxPressed;
+
     public static final int ISO_CHARACTER_LENGTH = 2;
 
     @Override
@@ -167,7 +169,7 @@ public class AvailableLayouts extends Activity {
     //this override method creates the github repository settings windows, and upload the values in the shared preferences file if those changed
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(final MenuItem item) {
         if(item.getItemId() == R.id.github_config){
             LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
             //this is for prevent any error with the inflater
@@ -191,9 +193,12 @@ public class AvailableLayouts extends Activity {
                 toggleRepositoryOptions(false);
             }
 
+            checkBoxPressed = false;
+
             defaultServerCheckBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    checkBoxPressed = true;
                     toggleRepositoryOptions(true);
                     isDefChecked = true;
                     //we save the status into the sharedPreferences file
@@ -204,6 +209,7 @@ public class AvailableLayouts extends Activity {
             customServerCheckBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    checkBoxPressed = true;
                     toggleRepositoryOptions(false);
                     isDefChecked = false;
                     //we save the status into the sharedPreferences file
@@ -242,19 +248,21 @@ public class AvailableLayouts extends Activity {
                     .setNegativeButton(getResources().getString(R.string.menu_cancel), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            if(!isDefChecked){
-                                toggleRepositoryOptions(true);
-                                isDefChecked = true;
-                                //save the status into the sharedPreferences file
-                                editor.putBoolean("defCheck", isDefChecked);
-                                editor.commit();
-                            }
-                            else{
-                                toggleRepositoryOptions(false);
-                                isDefChecked = false;
-                                //save the status into the sharedPreferences file
-                                editor.putBoolean("defCheck", isDefChecked);
-                                editor.commit();
+                            if (checkBoxPressed){
+                                if(!isDefChecked){
+                                    toggleRepositoryOptions(true);
+                                    isDefChecked = true;
+                                    //save the status into the sharedPreferences file
+                                    editor.putBoolean("defCheck", isDefChecked);
+                                    editor.commit();
+                                }
+                                else{
+                                    toggleRepositoryOptions(false);
+                                    isDefChecked = false;
+                                    //save the status into the sharedPreferences file
+                                    editor.putBoolean("defCheck", isDefChecked);
+                                    editor.commit();
+                                }
                             }
                             dialog.cancel();
                         }
